@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-yz!!uig3ut=kd=0io@jhlo!gm2yl)di@+a!87i!5@q-8dqu&d='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'recipes', #adicionando a aplicação recipes ao projeto
+
 ]
 
 MIDDLEWARE = [
@@ -54,7 +57,9 @@ ROOT_URLCONF = 'project_setup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'base_templates', # caso tenha dois semelhantes esse tera semelhança com o outro coesão de nomes
+            ], # informar os templates adicionais
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
