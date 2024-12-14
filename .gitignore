@@ -132,3 +132,4 @@ static/
 
 # my
 test_algo.py
+.gitignore
